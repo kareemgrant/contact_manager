@@ -1,0 +1,9 @@
+(standard input):kareemgrant     19614   0.0  0.1  2444324   5712   ??  Ss   11:15AM   0:00.02 postgres: kareemgrant contact_man_test [local] idle    
+(standard input):kareemgrant       396   0.0  0.0  2439576    584   ??  Ss   Fri07PM   0:06.76 postgres: stats collector process       
+(standard input):kareemgrant       395   0.0  0.0  2443428   1688   ??  Ss   Fri07PM   0:05.66 postgres: autovacuum launcher process       
+(standard input):kareemgrant       394   0.0  0.0  2443296    340   ??  Ss   Fri07PM   0:01.16 postgres: wal writer process       
+(standard input):kareemgrant       393   0.0  0.0  2443296   1004   ??  Ss   Fri07PM   0:01.25 postgres: writer process       
+(standard input):kareemgrant       392   0.0  0.0  2443296    856   ??  Ss   Fri07PM   0:00.05 postgres: checkpointer process       
+(standard input):kareemgrant       374   0.0  0.0  2443296   1992   ??  S    Fri07PM   0:02.21 /usr/local/bin/postgres -D /usr/local/var/postgres -r /usr/local/var/postgres/server.log
+(standard input):kareemgrant     19710   0.0  0.0  2432768    468 s005  R+   11:20AM   0:00.00 grep postgres - all postgres dbs running
+(standard input):kareemgrant     19639   0.0  0.1  2444324   5716   ??  Ss   11:17AM   0:00.01 postgres: kareemgrant contact_man_development [local] idle    

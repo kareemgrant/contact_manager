@@ -21,6 +21,7 @@ test:
   pool: 5
   username: kareemgrant
   password: 
+  min_messages: WARNING
 
 production:
   adapter: postgresql
