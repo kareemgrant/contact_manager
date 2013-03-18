@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'rspec-rails'
 gem 'rspec-rails'
 gem 'unicorn'
+gem 'heroku'
+gem 'pg'
 
 
 # Gems used only for assets and not required
