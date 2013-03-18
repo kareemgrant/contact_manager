@@ -21,4 +21,8 @@ describe Person do
     @person.last_name = nil
     expect(@person).to_not be_valid
   end
+
+  it "should have an array of phone numbers" do
+    expect(@person.phone_numbers.class).to eq Array
+  end
 end
