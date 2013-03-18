@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 # gem 'sqlite3'
 gem 'pg'
 gem 'haml'
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required
@@ -28,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'unicorn'
   gem 'heroku'
+  gem 'erb2haml'
+  gem 'html2haml'
 end
 
 gem 'jquery-rails'
