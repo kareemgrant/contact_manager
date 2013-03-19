@@ -32,6 +32,7 @@ group :development, :test do
   gem 'erb2haml'
   gem 'html2haml'
   gem 'pry'
+  gem 'capybara'
 end
 
 gem 'jquery-rails'
