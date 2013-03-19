@@ -31,6 +31,7 @@ group :development, :test do
   gem 'heroku'
   gem 'erb2haml'
   gem 'html2haml'
+  gem 'pry'
 end
 
 gem 'jquery-rails'
