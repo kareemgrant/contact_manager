@@ -1,7 +1,7 @@
 module PhoneNumbersHelper
   def print_numbers(phone_numbers)
     if phone_numbers.count < 2
-      binding.pry
+      # binding.pry
       phone_numbers.first.number
     else
       content_tag :ul do
