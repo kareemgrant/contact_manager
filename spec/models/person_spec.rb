@@ -25,4 +25,8 @@ describe Person do
   it "should have an array of phone numbers" do
     expect(@person.phone_numbers.class).to eq Array
   end
+  
+  it "should have an array of email addresses" do
+    expect(@person.email_addresses.class).to eq Array
+  end
 end
