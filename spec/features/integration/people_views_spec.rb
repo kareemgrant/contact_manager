@@ -14,29 +14,45 @@ describe "the views for people", type: :request do
       visit person_path(@person)
     end
 
-    it "should have edit links for each phone number" do
-      @person.phone_numbers.each do |phone_number|
-        page.should have_link("edit", href: edit_phone_number_path(phone_number))
+    context "when working with phone numbers on the show page" do
+
+      it "should have edit links for each phone number" do
+        @person.phone_numbers.each do |phone_number|
+          page.should have_link("edit", href: edit_phone_number_path(phone_number))
+        end
+      end
+
+      it "should have delete links for each phone number" do
+        @person.phone_numbers.each do |phone_number| 
+          page.should have_link("delete", href: phone_number_path(phone_number))
+        end
+      end
+
+      it "link should no longer exist" do
+        number = @person.phone_numbers.first
+        page.click_link(href: phone_number_path(number))
+
+        expect(current_path).to eq person_path(@person)
+        page.should_not have_link("delete", href: phone_number_path(number))
       end
     end
 
-    it "should have delete links for each phone number" do
-      @person.phone_numbers.each do |phone_number| 
-        page.should have_link("delete", href: phone_number_path(phone_number))
+    context "when working with emails on the show page" do
+
+      it "should display each of the email addresses" do
+        page.should have_selector('li', text: @email_address.address)
+      end
+
+      it "should have an add email address link" do 
+        page.should have_link("Add an email address", href: new_email_address_path(person_id: @person.id))
+      end
+
+      it "should display page where email address can be edited" do
+        page.click_link(href: new_email_address_path(person_id: @person.id))
+        expect(current_path).to eq new_email_address_path
       end
     end
 
-    it "link should no longer exist" do
-      number = @person.phone_numbers.first
-      page.click_link(href: phone_number_path(number))
-
-      expect(current_path).to eq person_path(@person)
-      page.should_not have_link("delete", href: phone_number_path(number))
-    end
-
-    it "should display each of the email addresses" do
-      page.should have_selector('li', text: @email_address.address)
-    end
   end
 
   describe "when viewing all people on the index page" do
