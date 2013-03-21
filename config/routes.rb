@@ -1,16 +1,12 @@
 ContactManager::Application.routes.draw do
+  get "email_address/new"
+
+  get "email_address/index"
+
   resources :phone_numbers
-
-
-  resources :people do 
-    member do 
-      get :jump, :as => "rides"
-    end
- 
-    collection do 
-      get :jump, :as => "transportation"
-    end
-  end
+  resources :people
+  resources :email_addresses
+    
 
 
   # The priority is based upon order of creation:

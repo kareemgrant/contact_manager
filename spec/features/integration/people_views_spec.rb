@@ -6,6 +6,7 @@ describe "the views for people", type: :request do
     @person = Person.create(first_name: "Kareem", last_name: "Grant")
     number_a = @person.phone_numbers.create(number: "2404905210")
     number_b = @person.phone_numbers.create(number: "2349058975")
+    @email_address = @person.email_addresses.create(address: "reemo@reem.com")
   end
 
   describe "when looking at a single person" do
@@ -32,5 +33,24 @@ describe "the views for people", type: :request do
       expect(current_path).to eq person_path(@person)
       page.should_not have_link("delete", href: phone_number_path(number))
     end
+
+    it "should display each of the email addresses" do
+      page.should have_selector('li', text: @email_address.address)
+    end
+  end
+
+  describe "when viewing all people on the index page" do
+    before(:each) do 
+      visit people_path
+    end
+
+    context "email addresses" do
+      it "should have edit links for each email address" do 
+        @person.email_addresses.each do |email|
+          page.should have_link("edit", href: edit_email_address_path(email)) 
+        end 
+      end
+    end
+
   end
 end
